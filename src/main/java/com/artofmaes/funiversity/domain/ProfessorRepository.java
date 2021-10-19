@@ -20,26 +20,30 @@ public class ProfessorRepository {
         this.professorsById = new ConcurrentHashMap<>();
     }
 
-    public Professor addProfessor(Professor professor){
+    public Professor addProfessor(Professor professor) {
         professorsById.put(professor.getId(), professor);
         return professor;
     }
 
-    public Professor replaceProfessor(String id, Professor professor){
+    public Professor replaceProfessor(String id, Professor professor) {
         professorsById.put(id, professor);
         return professor;
     }
 
     public Professor getById(String id) throws IllegalArgumentException {
         var foundProfessor = professorsById.get(id);
-        if(foundProfessor == null) {
+        if (foundProfessor == null) {
             myLogger.warn("NO PROF FOUND!");
             throw new ProfessorDoesNotExistException("No prof could be found " + id);
         }
         return foundProfessor;
     }
 
-    public Collection<Professor> getAll(){return professorsById.values();}
+    public Collection<Professor> getAll() {
+        return professorsById.values();
+    }
 
-    public void removeProfessor(String id) {professorsById.remove(id);}
+    public void removeProfessor(String id) {
+        professorsById.remove(id);
+    }
 }

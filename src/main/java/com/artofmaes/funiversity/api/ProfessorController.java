@@ -25,19 +25,20 @@ public class ProfessorController {
     }
 
     //POSTERS
-    @PostMapping(consumes ="application/json", produces = "application/json")
+    @PostMapping(consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public ProfessorDTO createProfessor(@RequestBody CreateProfessorDTO createProfessorDTO) {
-       myLogger.info("Method createProfessor called");
+        myLogger.info("Method createProfessor called");
         return professorService.createProfessor(createProfessorDTO);
     }
 
     //GETTERS
     @GetMapping(produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
-    public List<ProfessorDTO> getAllProfessors(){
+    public List<ProfessorDTO> getAllProfessors() {
         myLogger.info("Method getAllProfessors called");
-        return professorService.getProfessors().stream().toList();}
+        return professorService.getProfessors().stream().toList();
+    }
 
     @GetMapping(path = "/{id}", produces = "application/json")
     @ResponseStatus(HttpStatus.OK)
@@ -47,9 +48,9 @@ public class ProfessorController {
     }
 
     //PUTTERS
-    @PutMapping(path="/{id}", consumes = "application/json", produces = "application/json")
+    @PutMapping(path = "/{id}", consumes = "application/json", produces = "application/json")
     @ResponseStatus(HttpStatus.I_AM_A_TEAPOT)
-    public ProfessorDTO updateProfessor(@PathVariable("id") String id, @RequestBody UpdateProfessorDTO updateProfessorDTO){
+    public ProfessorDTO updateProfessor(@PathVariable("id") String id, @RequestBody UpdateProfessorDTO updateProfessorDTO) {
         myLogger.info("Method updateProfessor called");
         return professorService.updateProfessor(id, updateProfessorDTO);
     }
@@ -57,7 +58,7 @@ public class ProfessorController {
     //DELETERS
     @DeleteMapping(path = "/{id}")
     @ResponseStatus(HttpStatus.GONE)
-    public void deleteProfessor(@PathVariable("id") String id){
+    public void deleteProfessor(@PathVariable("id") String id) {
         myLogger.info("Method deleteProfessor called");
         professorService.deleteProfessor(id);
     }

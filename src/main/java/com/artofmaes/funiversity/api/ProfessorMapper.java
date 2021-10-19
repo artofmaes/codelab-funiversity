@@ -9,11 +9,11 @@ import java.util.stream.Collectors;
 
 @Component
 public class ProfessorMapper {
-    public Collection<ProfessorDTO> toDTO(Collection<Professor> professors){
+    public Collection<ProfessorDTO> toDTO(Collection<Professor> professors) {
         return professors.stream().map(this::toDTO).collect(Collectors.toList());
     }
 
-    public ProfessorDTO toDTO(Professor professor){
+    public ProfessorDTO toDTO(Professor professor) {
         return new ProfessorDTO(professor.getId(), professor.getFirstName(), professor.getLastName());
     }
 

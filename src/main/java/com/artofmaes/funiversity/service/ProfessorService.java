@@ -37,7 +37,7 @@ public class ProfessorService {
     }
 
     public Collection<ProfessorDTO> getProfessors() {
-        if(professorRepository.getAll().size() == 0){
+        if (professorRepository.getAll().size() == 0) {
             myLogger.warn("No professors found!");
             throw new EmptyProfessorListException("No professors found!");
         }
@@ -46,7 +46,7 @@ public class ProfessorService {
 
     //UPDATE
     public ProfessorDTO updateProfessor(String id, UpdateProfessorDTO updateProfessorDTO) {
-        if(id == null) {
+        if (id == null) {
             myLogger.warn("No professor with this id");
             throw new ProfessorDoesNotExistException("No professor with this id");
         }
@@ -60,7 +60,7 @@ public class ProfessorService {
 
     //DELETE
     public void deleteProfessor(String id) {
-        if(id == null) {
+        if (id == null) {
             myLogger.warn("No professor with this id");
             throw new ProfessorDoesNotExistException("No professor with this id");
         }

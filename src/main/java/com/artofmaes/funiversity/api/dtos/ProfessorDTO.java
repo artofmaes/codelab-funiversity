@@ -1,9 +1,9 @@
 package com.artofmaes.funiversity.api.dtos;
 
 public class ProfessorDTO {
-    private String id;
-    private String firstName;
-    private String lastName;
+    private final String id;
+    private final String firstName;
+    private final String lastName;
 
     public ProfessorDTO(String id, String firstName, String lastName) {
         this.id = id;
@@ -15,26 +15,14 @@ public class ProfessorDTO {
         return id;
     }
 
-    public ProfessorDTO setId(String id) {
-        this.id = id;
-        return this;
-    }
-
     public String getFirstName() {
         return firstName;
     }
 
-    public ProfessorDTO setFirstName(String firstName) {
-        this.firstName = firstName;
-        return this;
-    }
 
     public String getLastName() {
         return lastName;
     }
 
-    public ProfessorDTO setLastName(String lastName) {
-        this.lastName = lastName;
-        return this;
-    }
+
 }

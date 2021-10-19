@@ -19,7 +19,7 @@ public class ControllerExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(ProfessorDoesNotExistException.class)
-    protected void professorDoesNotExistException(ProfessorDoesNotExistException exception, HttpServletResponse response) throws IOException{
+    protected void professorDoesNotExistException(ProfessorDoesNotExistException exception, HttpServletResponse response) throws IOException {
         response.sendError(HttpStatus.NOT_FOUND.value(), exception.getMessage());
     }
 }
